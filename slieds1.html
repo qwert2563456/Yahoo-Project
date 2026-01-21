@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Slide 1 - Current Issues</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .yahoo-red-text {
+            color: #FF0033;
+        }
+        .yahoo-red-bg {
+            background-color: #FF0033;
+        }
+        .yahoo-red-border {
+            border-color: #FF0033;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.relative{position:relative}.z-10{z-index:10}.col-span-5{grid-column:span 5 / span 5}.col-span-7{grid-column:span 7 / span 7}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mr-1{margin-right:0.25rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.mt-3{margin-top:0.75rem}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.h-10{height:2.5rem}.h-20{height:5rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-full{height:100%}.min-h-0{min-height:0px}.w-1\/2{width:50%}.w-3{width:0.75rem}.w-4{width:1rem}.w-full{width:100%}.flex-1{flex:1 1 0%}.grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-sm{border-radius:0.125rem}.border-b{border-bottom-width:1px}.border-b-4{border-bottom-width:4px}.border-l-8{border-left-width:8px}.border-t{border-top-width:1px}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.bg-gray-300{--tw-bg-opacity:1;background-color:rgb(209 213 219 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-2{padding:0.5rem}.p-5{padding:1.25rem}.px-12{padding-left:3rem;padding-right:3rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-1{padding-bottom:0.25rem}.pb-2{padding-bottom:0.5rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-medium{font-weight:500}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-red-800{--tw-text-opacity:1;color:rgb(153 27 27 / var(--tw-text-opacity, 1))}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}</style></head>
+<body style="">
+<div class="slide-container">
+<!-- Header -->
+<header class="h-20 px-12 flex items-center justify-between border-b-4 yahoo-red-border bg-white z-10">
+<h1 class="text-3xl font-bold tracking-tight text-gray-800">
+<i class="fa-solid fa-triangle-exclamation yahoo-red-text mr-3"></i>一次産業の危機的状況
+            </h1>
+<div class="flex items-center space-x-2">
+<span class="text-sm text-gray-400 font-medium">新規事業企画 2030</span>
+<div class="h-4 w-4 yahoo-red-bg rounded-sm"></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-12 py-6 flex flex-col gap-6 bg-gray-50">
+<!-- Conclusion -->
+<div class="bg-white p-5 rounded-lg shadow-sm border-l-8 yahoo-red-border flex items-center" style="position: relative; transform: translate(0px, -13.4583px);">
+<div class="flex-1">
+<p class="text-xl font-bold text-gray-800 leading-relaxed">
+                        結論：<span class="yahoo-red-text">高齢化・事故率・人口減</span>が同時進行し、
+                        供給と安全の両面で産業の持続可能性が損なわれている。
+                    </p>
+</div>
+</div>
+<!-- Data Visualization Area -->
+<div class="flex-1 grid grid-cols-12 gap-6 min-h-0">
+<!-- Left Column: Population Trend (Line Chart) -->
+<div class="col-span-7 bg-white p-5 rounded-lg shadow-sm flex flex-col" style="position: relative; transform: translate(-2.69166px, -25.5708px);">
+<div class="mb-2">
+<h3 class="text-lg font-bold text-gray-700 border-b pb-2 mb-1">
+<i class="fa-solid fa-chart-line text-gray-400 mr-2"></i>基幹的農業従事者数の推移
+                        </h3>
+<p class="text-xs text-gray-500">2025年は102万人まで減少。5年前比で約25%の大幅減。</p>
+</div>
+<div class="flex-1 relative w-full h-full min-h-0">
+<canvas id="populationChart" width="1281" height="964" style="display: block; box-sizing: border-box; height: 482px; width: 640.7px;"></canvas>
+</div>
+</div>
+<!-- Right Column: Age & Accidents (Pie & Bar Charts) -->
+<div class="col-span-5 flex flex-col gap-6">
+<!-- Top Right: Age Distribution -->
+<div class="flex-1 bg-white p-5 rounded-lg shadow-sm flex flex-row items-center gap-4" style="position: relative; transform: translate(-4.03749px, -21.5389px);">
+<div class="w-1/2 h-full relative flex items-center justify-center">
+<canvas id="ageChart" width="439" height="600" style="display: block; box-sizing: border-box; height: 300px; width: 219.7px;"></canvas>
+</div>
+<div class="w-1/2">
+<h3 class="text-md font-bold text-gray-700 mb-2">平均年齢 <span class="text-2xl yahoo-red-text font-black">67.6</span> 歳</h3>
+<p class="text-sm text-gray-600 mb-1">
+<span class="inline-block w-3 h-3 rounded-full bg-gray-300 mr-1"></span>65歳未満: 30.5%
+                            </p>
+<p class="text-sm text-gray-800 font-bold">
+<span class="inline-block w-3 h-3 rounded-full yahoo-red-bg mr-1"></span>65歳以上: 69.5%
+                            </p>
+<div class="mt-3 p-2 bg-red-50 rounded text-xs text-red-800 font-medium">
+<i class="fa-solid fa-user-injured mr-1"></i>農作業死亡事故の85%が高齢者
+                            </div>
+</div>
+</div>
+<!-- Bottom Right: Accident Rate Comparison -->
+<div class="flex-1 bg-white p-5 rounded-lg shadow-sm flex flex-col" style="position: relative; transform: translate(-1.34583px, -30.954px);">
+<div class="mb-1">
+<h3 class="text-md font-bold text-gray-700 border-b pb-1">
+<i class="fa-solid fa-skull-crossbones text-gray-400 mr-2"></i>死傷年千人率の比較
+                            </h3>
+</div>
+<div class="flex-1 relative w-full h-full min-h-0">
+<canvas id="accidentChart" width="878" height="300" style="display: block; box-sizing: border-box; height: 150px; width: 439.3px; position: relative; transform: translate(-2.24126px, 6.54738px);"></canvas>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="h-10 px-12 bg-white border-t border-gray-200 flex items-center justify-between text-xs text-gray-500">
+<p>出典：農林水産省「2025年農林業センサス（概数値）」、厚生労働省「労働者死傷病報告」、JIL『グラフでみる長期労働統計』</p>
+<p>Yahoo Japan Proposal 2025 | Page 01</p>
+</footer>
+</div>
+<script>
+        // Chart Configs
+        Chart.defaults.font.family = "'Noto Sans JP', sans-serif";
+        Chart.defaults.color = '#666';
+
+        // 1. Population Trend Chart (Line)
+        const ctxPop = document.getElementById('populationChart').getContext('2d');
+        new Chart(ctxPop, {
+            type: 'line',
+            data: {
+                labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
+                datasets: [{
+                    label: '基幹的農業従事者数 (万人)',
+                    data: [240, 224, 205, 175, 136, 102],
+                    borderColor: '#FF0033',
+                    backgroundColor: 'rgba(255, 0, 51, 0.1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#FF0033',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleFont: { size: 14 },
+                        bodyFont: { size: 14 }
+                    },
+                    annotation: {
+                        annotations: {
+                            label1: {
+                                type: 'label',
+                                xValue: '2025',
+                                yValue: 102,
+                                backgroundColor: '#FF0033',
+                                content: ['半減'],
+                                font: { size: 12, weight: 'bold' },
+                                color: '#fff',
+                                borderRadius: 4,
+                                padding: 6
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 300,
+                        title: { display: true, text: '万人' },
+                        grid: { borderDash: [2, 2] }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // 2. Age Distribution Chart (Doughnut)
+        const ctxAge = document.getElementById('ageChart').getContext('2d');
+        new Chart(ctxAge, {
+            type: 'doughnut',
+            data: {
+                labels: ['65歳未満', '65歳以上'],
+                datasets: [{
+                    data: [30.5, 69.5],
+                    backgroundColor: ['#E5E7EB', '#FF0033'],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + context.raw + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // 3. Accident Rate Chart (Horizontal Bar)
+        const ctxAccident = document.getElementById('accidentChart').getContext('2d');
+        new Chart(ctxAccident, {
+            type: 'bar',
+            data: {
+                labels: ['全産業', '建設業', '農業', '林業'],
+                datasets: [{
+                    label: '死傷年千人率',
+                    data: [2.3, 2.7, 5.8, 22.8],
+                    backgroundColor: [
+                        '#E5E7EB', 
+                        '#9CA3AF', 
+                        '#FF0033', // 農業
+                        '#99001F'  // 林業（より濃い赤）
+                    ],
+                    borderRadius: 4,
+                    barPercentage: 0.6
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw + ' (千人率)';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { display: true, borderDash: [2, 2] }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { font: { weight: 'bold' } }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body></html>

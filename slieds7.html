@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Slide 7 - Concrete Service Proposal</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .yahoo-red-text {
+            color: #FF0033;
+        }
+        .yahoo-red-bg {
+            background-color: #FF0033;
+        }
+        .yahoo-red-border {
+            border-color: #FF0033;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .bg-watermark {
+            position: absolute;
+            right: -10px;
+            bottom: -20px;
+            font-size: 8rem;
+            color: rgba(0, 0, 0, 0.03);
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<header class="h-20 px-12 flex items-center justify-between border-b-4 yahoo-red-border bg-white z-10 shrink-0">
+<h1 class="text-3xl font-bold tracking-tight text-gray-800">
+<i class="fa-solid fa-cubes yahoo-red-text mr-3"></i>具体サービス案：4つのコア
+            </h1>
+<div class="flex items-center space-x-2">
+<span class="text-sm text-gray-400 font-medium">新規事業企画 2030</span>
+<div class="h-4 w-4 yahoo-red-bg rounded-sm"></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-12 py-8 bg-gray-50 grid grid-cols-2 grid-rows-2 gap-6 min-h-0">
+<!-- Service 1: HR Bank -->
+<div class="bg-white rounded-xl card-shadow border-l-8 border-blue-500 p-6 relative overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow">
+<i class="fa-solid fa-users-viewfinder bg-watermark group-hover:text-blue-50 transition-colors"></i>
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-3">
+<span class="text-4xl font-black text-gray-200">01</span>
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+<i class="fa-solid fa-handshake text-xl"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">
+                        Yahoo! <span class="text-blue-600">一次産業人材バンク</span>
+</h3>
+<p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                        短期・季節労働に特化した適性ベースのマッチングプラットフォーム。繁忙期のスポット需要と、都市部副業層や移住希望者を「Yahoo! JAPAN ID」で即座に接続。
+                    </p>
+</div>
+<div class="relative z-10 bg-blue-50 rounded-lg p-3 border border-blue-100">
+<p class="text-xs text-blue-800 font-bold mb-1"><i class="fa-solid fa-bullseye mr-1"></i>Key Performance Indicator</p>
+<div class="flex justify-between items-end">
+<p class="text-xs text-gray-600">年間マッチング数</p>
+<p class="text-lg font-bold text-blue-600">50,000<span class="text-xs font-normal text-gray-500 ml-1">件/年</span></p>
+</div>
+<div class="w-full bg-blue-200 h-1 mt-1 rounded-full overflow-hidden">
+<div class="bg-blue-500 h-full w-3/4"></div>
+</div>
+</div>
+</div>
+<!-- Service 2: Subsidy Navi -->
+<div class="bg-white rounded-xl card-shadow border-l-8 border-green-500 p-6 relative overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow">
+<i class="fa-solid fa-file-invoice-dollar bg-watermark group-hover:text-green-50 transition-colors"></i>
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-3">
+<span class="text-4xl font-black text-gray-200">02</span>
+<div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+<i class="fa-solid fa-magnifying-glass-dollar text-xl"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">
+<span class="text-green-600">補助金ナビ</span> for Farmers
+                    </h3>
+<p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                        地域・年齢・品目・経営規模から、利用可能な補助金を自動判定。申請書類のドラフト作成から電子申請までをウィザード形式で伴走支援。
+                    </p>
+</div>
+<div class="relative z-10 bg-green-50 rounded-lg p-3 border border-green-100">
+<p class="text-xs text-green-800 font-bold mb-1"><i class="fa-solid fa-bullseye mr-1"></i>Key Performance Indicator</p>
+<div class="flex justify-between items-end">
+<p class="text-xs text-gray-600">申請完了率</p>
+<p class="text-lg font-bold text-green-600">85<span class="text-xs font-normal text-gray-500 ml-1">%</span></p>
+</div>
+<div class="w-full bg-green-200 h-1 mt-1 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full w-4/5"></div>
+</div>
+</div>
+</div>
+<!-- Service 3: Safety Platform -->
+<div class="bg-white rounded-xl card-shadow border-l-8 yahoo-red-border p-6 relative overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow">
+<i class="fa-solid fa-shield-halved bg-watermark group-hover:text-red-50 transition-colors"></i>
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-3">
+<span class="text-4xl font-black text-gray-200">03</span>
+<div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center yahoo-red-text">
+<i class="fa-solid fa-helmet-safety text-xl"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">
+<span class="yahoo-red-text">安全教育</span>プラットフォーム
+                    </h3>
+<p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                        VR/動画を用いた事前シミュレーション教育。作業前の「危険予知（KY）」をスマホで実施し、安全スコアを可視化。保険料率との連動も視野に。
+                    </p>
+</div>
+<div class="relative z-10 bg-red-50 rounded-lg p-3 border border-red-100">
+<p class="text-xs text-red-800 font-bold mb-1"><i class="fa-solid fa-bullseye mr-1"></i>Key Performance Indicator</p>
+<div class="flex justify-between items-end">
+<p class="text-xs text-gray-600">事前研修修了率</p>
+<p class="text-lg font-bold yahoo-red-text">100<span class="text-xs font-normal text-gray-500 ml-1">%</span></p>
+</div>
+<div class="w-full bg-red-200 h-1 mt-1 rounded-full overflow-hidden">
+<div class="yahoo-red-bg h-full w-full"></div>
+</div>
+</div>
+</div>
+<!-- Service 4: Data Connect -->
+<div class="bg-white rounded-xl card-shadow border-l-8 border-yellow-500 p-6 relative overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow">
+<i class="fa-solid fa-network-wired bg-watermark group-hover:text-yellow-50 transition-colors"></i>
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-3">
+<span class="text-4xl font-black text-gray-200">04</span>
+<div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+<i class="fa-solid fa-database text-xl"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">
+                        一次産業<span class="text-yellow-600">データ連携基盤</span>
+</h3>
+<p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                        Yahoo!天気・地図・市況データと、現場の作業履歴を統合。経験と勘に頼らないデータドリブンな意思決定を、LINE連携のダッシュボードで支援。
+                    </p>
+</div>
+<div class="relative z-10 bg-yellow-50 rounded-lg p-3 border border-yellow-100">
+<p class="text-xs text-yellow-800 font-bold mb-1"><i class="fa-solid fa-bullseye mr-1"></i>Key Performance Indicator</p>
+<div class="flex justify-between items-end">
+<p class="text-xs text-gray-600">データ活用ユーザー数</p>
+<p class="text-lg font-bold text-yellow-600">20,000<span class="text-xs font-normal text-gray-500 ml-1">経営体</span></p>
+</div>
+<div class="w-full bg-yellow-200 h-1 mt-1 rounded-full overflow-hidden">
+<div class="bg-yellow-500 h-full w-1/2"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="h-10 px-12 bg-white border-t border-gray-200 flex items-center justify-between text-xs text-gray-500 shrink-0">
+<p>※KPIはサービス開始後3年目の目標値（想定）</p>
+<p>Yahoo Japan Proposal 2025 | Page 07</p>
+</footer>
+</div>
+</body>
+</html>

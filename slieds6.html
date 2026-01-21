@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Slide 6 - Why Yahoo</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .yahoo-red-text {
+            color: #FF0033;
+        }
+        .yahoo-red-bg {
+            background-color: #FF0033;
+        }
+        .yahoo-red-border {
+            border-color: #FF0033;
+        }
+        .bg-yahoo-light {
+            background-color: rgba(255, 0, 51, 0.04);
+        }
+        /* Grid for Asset Icons */
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<header class="h-20 px-12 flex items-center justify-between border-b-4 yahoo-red-border bg-white z-10 shrink-0">
+<h1 class="text-3xl font-bold tracking-tight text-gray-800">
+<i class="fa-solid fa-bullseye yahoo-red-text mr-3"></i>Yahooがやる理由
+            </h1>
+<div class="flex items-center space-x-2">
+<span class="text-sm text-gray-400 font-medium">新規事業企画 2030</span>
+<div class="h-4 w-4 yahoo-red-bg rounded-sm"></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-12 py-6 flex flex-col gap-6 bg-gray-50 min-h-0">
+<!-- Conclusion -->
+<div class="bg-white p-5 rounded-lg shadow-sm border-l-8 yahoo-red-border shrink-0 flex items-center justify-between">
+<div>
+<p class="text-xl font-bold text-gray-800 leading-relaxed">
+                        結論：<span class="yahoo-red-text">「年齢層の合致」</span>と<span class="yahoo-red-text">「日常動線の占有」</span>。<br/>
+<span class="text-base font-normal text-gray-600">高齢主体の現場に、新たな学習コストなしで介入できる唯一のプラットフォームである。</span>
+</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-gray-400 font-bold tracking-widest uppercase mb-1">Potential Reach</p>
+<div class="flex items-baseline gap-1 justify-end">
+<span class="text-gray-500 font-bold text-lg">MAU</span>
+<span class="text-4xl font-black text-gray-800">8,500</span>
+<span class="text-gray-500 font-bold text-lg">万人</span>
+</div>
+</div>
+</div>
+<!-- Two Columns Area -->
+<div class="flex-1 grid grid-cols-12 gap-6 min-h-0">
+<!-- Left: Age Affinity (Chart) -->
+<div class="col-span-6 bg-white p-6 rounded-lg shadow-sm flex flex-col">
+<div class="mb-4 pb-2 border-b flex justify-between items-end">
+<h3 class="text-lg font-bold text-gray-700">
+<i class="fa-solid fa-people-arrows text-gray-400 mr-2"></i>ユーザー層の親和性
+                        </h3>
+<span class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded font-bold">High Affinity</span>
+</div>
+<div class="flex-1 relative w-full h-full min-h-0">
+<canvas id="ageCompareChart"></canvas>
+</div>
+<div class="mt-4 p-3 bg-yahoo-light rounded border border-red-100">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-500 shrink-0 mt-0.5">
+<i class="fa-solid fa-check"></i>
+</div>
+<div>
+<p class="text-sm font-bold text-gray-800 mb-1">ミドル・シニア層での圧倒的シェア</p>
+<p class="text-xs text-gray-600 leading-relaxed">
+                                    40歳以上の利用者が約70%を占め、一次産業の主要従事者層（平均67.6歳）と重なる。<br/>
+<span class="font-bold underline decoration-red-300 decoration-2">「デジタルに不慣れな層」が「唯一使えるツール」</span>という強み。
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Existing Assets -->
+<div class="col-span-6 flex flex-col gap-4">
+<div class="bg-white p-6 rounded-lg shadow-sm h-full flex flex-col">
+<div class="mb-4 pb-2 border-b">
+<h3 class="text-lg font-bold text-gray-700">
+<i class="fa-solid fa-cubes-stacked text-gray-400 mr-2"></i>活用可能な既存アセット
+                            </h3>
+</div>
+<div class="flex-1 asset-grid overflow-y-auto pr-1">
+<!-- Asset 1: Search/Portal -->
+<div class="border rounded-lg p-3 flex items-start gap-3 hover:shadow-md transition-shadow bg-gray-50">
+<div class="w-10 h-10 rounded bg-white shadow-sm flex items-center justify-center text-red-500 text-xl border border-gray-100">
+<i class="fa-brands fa-yahoo"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800 text-sm">Yahoo! JAPAN (Portal)</h4>
+<p class="text-xs text-gray-500 mt-1">日本最大級のメディア力で、認知・集客の初速を最大化。</p>
+</div>
+</div>
+<!-- Asset 2: Weather -->
+<div class="border rounded-lg p-3 flex items-start gap-3 hover:shadow-md transition-shadow bg-gray-50">
+<div class="w-10 h-10 rounded bg-white shadow-sm flex items-center justify-center text-orange-400 text-xl border border-gray-100">
+<i class="fa-solid fa-sun"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800 text-sm">Yahoo!天気・災害</h4>
+<p class="text-xs text-gray-500 mt-1">農作業判断に不可欠な気象情報。防災通知と連携し安全確保。</p>
+</div>
+</div>
+<!-- Asset 3: Map -->
+<div class="border rounded-lg p-3 flex items-start gap-3 hover:shadow-md transition-shadow bg-gray-50">
+<div class="w-10 h-10 rounded bg-white shadow-sm flex items-center justify-center text-green-500 text-xl border border-gray-100">
+<i class="fa-solid fa-map-location-dot"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800 text-sm">Yahoo!マップ</h4>
+<p class="text-xs text-gray-500 mt-1">分散する圃場の可視化、作業ルート最適化、災害時避難。</p>
+</div>
+</div>
+<!-- Asset 4: ID & Payment -->
+<div class="border rounded-lg p-3 flex items-start gap-3 hover:shadow-md transition-shadow bg-gray-50">
+<div class="w-10 h-10 rounded bg-white shadow-sm flex items-center justify-center text-blue-500 text-xl border border-gray-100">
+<i class="fa-solid fa-id-card-clip"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800 text-sm">Yahoo! JAPAN ID / Pay</h4>
+<p class="text-xs text-gray-500 mt-1">本人確認済IDと決済基盤で、給与支払・補助金受取を即時化。</p>
+</div>
+</div>
+</div>
+<!-- Arrow Indicator -->
+<div class="mt-4 flex items-center justify-center">
+<div class="bg-gray-800 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-sm font-bold">
+<i class="fa-solid fa-arrow-down"></i>
+<span class="text-yellow-400">ワンストップ統合</span>
+<span>により社会コスト最小化</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="h-10 px-12 bg-white border-t border-gray-200 flex items-center justify-between text-xs text-gray-500 shrink-0">
+<p>出典：LINEヤフー株式会社 媒体資料（2024）、農林水産省「2025年農林業センサス」</p>
+<p>Yahoo Japan Proposal 2025 | Page 06</p>
+</footer>
+</div>
+<script>
+        // Chart Configs
+        Chart.defaults.font.family = "'Noto Sans JP', sans-serif";
+        Chart.defaults.color = '#666';
+
+        // Age Comparison Chart
+        const ctxAge = document.getElementById('ageCompareChart').getContext('2d');
+        new Chart(ctxAge, {
+            type: 'bar',
+            data: {
+                labels: ['~39歳', '40~49歳', '50~64歳', '65歳~'],
+                datasets: [
+                    {
+                        label: '一次産業従事者',
+                        data: [5, 10, 15, 70],
+                        backgroundColor: '#999999',
+                        borderColor: '#888888',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        barPercentage: 0.7,
+                        categoryPercentage: 0.8
+                    },
+                    {
+                        label: 'Yahoo!ユーザー',
+                        data: [30, 20, 26, 24],
+                        backgroundColor: '#FF0033',
+                        borderColor: '#CC0029',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        barPercentage: 0.7,
+                        categoryPercentage: 0.8
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal Bar
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        align: 'end',
+                        labels: { boxWidth: 12, usePointStyle: true }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': 約' + context.raw + '%';
+                            }
+                        }
+                    },
+                    annotation: {
+                        annotations: {
+                            box1: {
+                                type: 'box',
+                                xMin: 0,
+                                xMax: 100,
+                                yMin: 1.5,
+                                yMax: 3.5,
+                                backgroundColor: 'rgba(255, 0, 51, 0.05)',
+                                borderColor: 'rgba(255, 0, 51, 0.2)',
+                                borderWidth: 1,
+                                borderDash: [4, 4],
+                                label: {
+                                    display: false
+                                }
+                            },
+                            label1: {
+                                type: 'label',
+                                xValue: 50,
+                                yValue: 2.5,
+                                content: ['ターゲット親和性', 'MAX'],
+                                font: { size: 14, weight: 'bold' },
+                                color: 'rgba(255, 0, 51, 0.5)',
+                                rotation: -15
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: { display: true, text: '構成比 (%)' },
+                        grid: { borderDash: [2, 2] }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { font: { weight: 'bold' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

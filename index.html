@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Slide Viewer</title>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    overflow: hidden;
+  }
+
+  .stage {
+    width: 1280px;
+    height: 720px;
+    transform-origin: top left;
+  }
+
+  iframe {
+    width: 1280px;
+    height: 720px;
+    border: none;
+  }
+</style>
+</head>
+<body>
+
+<div id="stage" class="stage">
+  <iframe id="slide" src="slieds1.html"></iframe>
+</div>
+
+<script>
+const slides = [
+  "slieds1.html",
+  "slieds2.html",
+  "slieds3.html",
+  "slieds4.html",
+  "slieds5.html",
+  "slieds6.html",
+  "slieds7.html",
+  "slieds8.html",
+  "slieds9.html",
+];
+
+let current = 0;
+
+function showSlide() {
+  document.getElementById("slide").src = slides[current];
+}
+
+function resize() {
+  const scaleX = window.innerWidth / 1280;
+  const scaleY = window.innerHeight / 720;
+  const scale = Math.min(scaleX, scaleY);
+
+  const stage = document.getElementById("stage");
+  stage.style.transform = `scale(${scale})`;
+  stage.style.marginLeft = `${(window.innerWidth - 1280 * scale) / 2}px`;
+  stage.style.marginTop  = `${(window.innerHeight - 720 * scale) / 2}px`;
+}
+
+window.addEventListener("resize", resize);
+resize();
+
+document.addEventListener("keydown", e => {
+  if (e.key === "ArrowRight") {
+    current = Math.min(current + 1, slides.length - 1);
+    showSlide();
+  }
+  if (e.key === "ArrowLeft") {
+    current = Math.max(current - 1, 0);
+    showSlide();
+  }
+});
+</script>
+
+</body>
+</html>
