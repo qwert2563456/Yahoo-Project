@@ -22,6 +22,19 @@
     height: 720px;
     border: none;
   }
+
+  .fullscreen-btn {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 9999;
+  }
 </style>
 </head>
 <body>
@@ -29,6 +42,8 @@
 <div id="stage" class="stage">
   <iframe id="slide" src="slieds1.html"></iframe>
 </div>
+
+<button class="fullscreen-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
 
 <script>
 const slides = [
@@ -45,7 +60,6 @@ const slides = [
 
 let current = 0;
 let touchStartX = 0;
-let touchEndX = 0;
 
 function showSlide() {
   document.getElementById("slide").src = slides[current];
@@ -65,7 +79,7 @@ function resize() {
 window.addEventListener("resize", resize);
 resize();
 
-/*キーボード*/
+/*PC*/
 document.addEventListener("keydown", e => {
   if (e.key === "ArrowRight") {
     current = Math.min(current + 1, slides.length - 1);
@@ -83,13 +97,7 @@ document.addEventListener("touchstart", e => {
 });
 
 document.addEventListener("touchend", e => {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-});
-
-function handleSwipe() {
-  const diff = touchStartX - touchEndX;
-
+  const diff = touchStartX - e.changedTouches[0].screenX;
   if (Math.abs(diff) < 50) return;
 
   if (diff > 0) {
@@ -98,6 +106,27 @@ function handleSwipe() {
     current = Math.max(current - 1, 0);
   }
   showSlide();
+});
+
+/*フルスク*/
+function toggleFullscreen() {
+  const elem = document.documentElement;
+
+  if (!document.fullscreenElement &&
+      !document.webkitFullscreenElement) {
+
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+  }
 }
 </script>
 
