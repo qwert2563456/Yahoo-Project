@@ -8,6 +8,7 @@
     margin: 0;
     background: #000;
     overflow: hidden;
+    touch-action: none;
   }
 
   .stage {
@@ -43,6 +44,8 @@ const slides = [
 ];
 
 let current = 0;
+let touchStartX = 0;
+let touchEndX = 0;
 
 function showSlide() {
   document.getElementById("slide").src = slides[current];
@@ -62,6 +65,7 @@ function resize() {
 window.addEventListener("resize", resize);
 resize();
 
+/*キーボード*/
 document.addEventListener("keydown", e => {
   if (e.key === "ArrowRight") {
     current = Math.min(current + 1, slides.length - 1);
@@ -72,6 +76,29 @@ document.addEventListener("keydown", e => {
     showSlide();
   }
 });
+
+/*スマホ*/
+document.addEventListener("touchstart", e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener("touchend", e => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = touchStartX - touchEndX;
+
+  if (Math.abs(diff) < 50) return;
+
+  if (diff > 0) {
+    current = Math.min(current + 1, slides.length - 1);
+  } else {
+    current = Math.max(current - 1, 0);
+  }
+  showSlide();
+}
 </script>
 
 </body>
