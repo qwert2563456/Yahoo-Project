@@ -3,49 +3,96 @@
 <head>
 <meta charset="utf-8">
 <title>Slide Viewer</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
 <style>
-  body {
-    margin: 0;
-    background: #000;
-    overflow: hidden;
-    touch-action: none;
-  }
+body {
+  margin: 0;
+  background: #000;
+  overflow: hidden;
+  touch-action: none;
+}
 
-  .stage {
-    width: 1280px;
-    height: 720px;
-    transform-origin: top left;
-  }
+.stage {
+  width: 1280px;
+  height: 720px;
+  transform-origin: top left;
+  outline: none;
+}
 
-  iframe {
-    width: 1280px;
-    height: 720px;
-    border: none;
-  }
+iframe {
+  width: 1280px;
+  height: 720px;
+  border: none;
+  display: block;
+}
 
-  .fullscreen-btn {
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-size: 14px;
-    z-index: 9999;
-  }
+.fullscreen-btn {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 9999;
+}
+
+.nav-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 18px 22px;
+  font-size: 22px;
+  z-index: 9999;
+}
+
+.nav-prev { left: 12px; }
+.nav-next { right: 12px; }
+
+.rotate-notice {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10000;
+  font-size: 18px;
+}
 </style>
 </head>
 <body>
 
-<div id="stage" class="stage">
-  <iframe id="slide" src="slieds1.html"></iframe>
+<div id="rotateNotice" class="rotate-notice">
+  <div>
+<br>
+    全画面表示では<br>
+    横向きにしてください
+  </div>
 </div>
+
+<div id="stage" class="stage" tabindex="0">
+  <iframe id="slide" src="slieds1.html" tabindex="-1"></iframe>
+</div>
+
+<button class="nav-btn nav-prev" onclick="prevSlide()">◀</button>
+<button class="nav-btn nav-next" onclick="nextSlide()">▶</button>
 
 <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
 
 <script>
+const SLIDE_WIDTH = 1280;
+const SLIDE_HEIGHT = 720;
+
 const slides = [
   "slieds1.html",
   "slieds2.html",
@@ -57,62 +104,67 @@ const slides = [
 ];
 
 let current = 0;
-let touchStartX = 0;
 
 function showSlide() {
   document.getElementById("slide").src = slides[current];
 }
 
 function resize() {
-  const scaleX = window.innerWidth / 1280;
-  const scaleY = window.innerHeight / 720;
+  const scaleX = window.innerWidth / SLIDE_WIDTH;
+  const scaleY = window.innerHeight / SLIDE_HEIGHT;
   const scale = Math.min(scaleX, scaleY);
 
   const stage = document.getElementById("stage");
   stage.style.transform = `scale(${scale})`;
-  stage.style.marginLeft = `${(window.innerWidth - 1280 * scale) / 2}px`;
-  stage.style.marginTop  = `${(window.innerHeight - 720 * scale) / 2}px`;
+  stage.style.marginLeft = `${(window.innerWidth - SLIDE_WIDTH * scale) / 2}px`;
+  stage.style.marginTop  = `${(window.innerHeight - SLIDE_HEIGHT * scale) / 2}px`;
 }
 
-window.addEventListener("resize", resize);
-resize();
+function isFullscreen() {
+  return document.fullscreenElement || document.webkitFullscreenElement;
+}
 
-/*PC*/
-document.addEventListener("keydown", e => {
-  if (e.key === "ArrowRight") {
-    current = Math.min(current + 1, slides.length - 1);
-    showSlide();
+function checkOrientation() {
+  const notice = document.getElementById("rotateNotice");
+
+  if (!isFullscreen()) {
+    notice.style.display = "none";
+    resize();
+    return;
   }
-  if (e.key === "ArrowLeft") {
-    current = Math.max(current - 1, 0);
-    showSlide();
-  }
-});
 
-/*スマホ*/
-document.addEventListener("touchstart", e => {
-  touchStartX = e.changedTouches[0].screenX;
-});
-
-document.addEventListener("touchend", e => {
-  const diff = touchStartX - e.changedTouches[0].screenX;
-  if (Math.abs(diff) < 50) return;
-
-  if (diff > 0) {
-    current = Math.min(current + 1, slides.length - 1);
+  if (window.innerHeight > window.innerWidth) {
+    notice.style.display = "flex";
   } else {
-    current = Math.max(current - 1, 0);
+    notice.style.display = "none";
+    resize();
   }
+}
+
+window.addEventListener("resize", checkOrientation);
+window.addEventListener("orientationchange", checkOrientation);
+document.addEventListener("fullscreenchange", checkOrientation);
+document.addEventListener("webkitfullscreenchange", checkOrientation);
+
+function nextSlide() {
+  current = Math.min(current + 1, slides.length - 1);
   showSlide();
+}
+
+function prevSlide() {
+  current = Math.max(current - 1, 0);
+  showSlide();
+}
+
+window.addEventListener("keydown", e => {
+  if (e.key === "ArrowRight") nextSlide();
+  if (e.key === "ArrowLeft") prevSlide();
 });
 
-/*フルスク*/
 function toggleFullscreen() {
   const elem = document.documentElement;
 
-  if (!document.fullscreenElement &&
-      !document.webkitFullscreenElement) {
-
+  if (!isFullscreen()) {
     if (elem.requestFullscreen) {
       elem.requestFullscreen();
     } else if (elem.webkitRequestFullscreen) {
@@ -126,6 +178,8 @@ function toggleFullscreen() {
     }
   }
 }
+
+resize();
 </script>
 
 </body>
